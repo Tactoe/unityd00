@@ -18,8 +18,13 @@ public class Inflate : MonoBehaviour {
             gonflage += new Vector3(1, 1, 1);
         }
         degonflage = 1 * Time.deltaTime;
-        if (gonflage.x >= 0)
+        if (gonflage.x >= 0 && gonflage.x < 6)
             gonflage -= new Vector3(degonflage, degonflage, degonflage);
+        else
+        {
+            Destroy(gameObject);
+            Debug.Log("BAllon mort");
+        }
         this.gameObject.transform.localScale = gonflage;
 
     }
